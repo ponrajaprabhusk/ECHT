@@ -9,7 +9,18 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  isUser:boolean = true;
+  isSidebarVisible:boolean = false;
+
   ngOnInit(): void {
+  }
+
+  sidebarOpen() {
+    this.isSidebarVisible = true; 
+  }
+
+  sidebarClose(){
+    this.isSidebarVisible = false;
   }
 
 }

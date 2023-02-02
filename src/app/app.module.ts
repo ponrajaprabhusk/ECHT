@@ -12,6 +12,9 @@ import { LoginComponent } from './body/login/login.component';
 import { RegisterComponent } from './body/register/register.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './body/home/home.component';
+import { UserDashboardComponent } from './body/user-dashboard/user-dashboard.component';
+import { MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -22,12 +25,16 @@ import { HomeComponent } from './body/home/home.component';
     LoginComponent,
     RegisterComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

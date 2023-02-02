@@ -1,34 +1,80 @@
 <app-header-popup ></app-header-popup>
-<nav class="navbar navbar-expand-lg navbar-light ">
-  <div class="container-fluid">
-    <a href="#"> <img src="../../assets/logo1.png" width="50" height="50" alt="ECHT"> </a>
+<ng-container *ngIf = "!isUser; else dashboard" >
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container-fluid">
+        <a href="#"> <img src="../../assets/logo1.png" width="50" height="50" alt="ECHT"> </a>
 
-    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav">
-            <ul id="navbar" class=" navbar-nav">
-              <li><a class="active" href="#">Home</a></li>
-              <li><a href="#">Why echt-feedback</a></li>
-              <li><a href="#">features</a></li>
-              <li><a href="#">How it works</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Solutions</a></li>
-              <li><a href="#">Contact</a></li>
-             </ul>    
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav">
+                <ul id="navbar" class=" navbar-nav">
+                  <li><a class="active" href="#">Home</a></li>
+                  <li><a href="#">Why echt-feedback</a></li>
+                  <li><a href="#">features</a></li>
+                  <li><a href="#">How it works</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Solutions</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>    
+              </div>
+              <div class="navbar-nav ms-auto">
+                <form class="d-flex navbar-nav ms-auto">
+                  <button class="btn btn-outline ">Start for free</button>
+                </form> 
+              </div>
           </div>
-          <div class="navbar-nav ms-auto">
-            <form class="d-flex navbar-nav ms-auto">
-              <button class="btn btn-outline ">Start for free</button>
-            </form> 
-          </div>
-
-
-            
-          
       </div>
-  </div>
-</nav>
+    </nav>
+</ng-container>
+
+
+
+<ng-template #dashboard>
+    <nav class="navbar navbar-expand-lg" id="userNav">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <i class='bx bx-user' ></i>
+          </li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <i class='bx bx-user' ></i>
+        </form>
+      </div>
+    </nav>
+
+    <div *ngIf="isSidebarVisible">
+        <div class="w3-sidebar w3-card w3-blue w3-bar-block" id="mySidebar">
+          <button (click)="sidebarClose()" class="w3-bar-item w3-blue w3-large"> &times;</button>
+          <a href="#" class="w3-bar-item w3-button">Search</a>
+          <a href="#" class="w3-bar-item w3-button">Notification</a>
+          <a href="#" class="w3-bar-item w3-button">My Feedback</a>
+          <a href="#" class="w3-bar-item w3-button">Manage Forms</a>
+          <a href="#" class="w3-bar-item w3-button">All Teams</a>
+          <a href="#" class="w3-bar-item w3-button">All Users</a>
+          <a href="#" class="w3-bar-item w3-button">Feed</a>
+          <a href="#" class="w3-bar-item w3-button">Support Center</a>
+        </div>
+    </div>
+    <div>
+      <button class="w3-button w3-xlarge" (click)="sidebarOpen()">☰</button>
+    </div>
+
+        <!-- Page Content -->
+    
+    <div style="margin-left:20%">
+          ... page content ...
+    </div>
+
+
+</ng-template>
