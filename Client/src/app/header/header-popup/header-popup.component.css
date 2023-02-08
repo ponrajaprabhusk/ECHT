@@ -1,0 +1,18 @@
+button{
+    border: none;
+    background-color: #ffff;
+}
+
+h6{
+    font-size: large;
+}
+
+.btn{
+    background-color: #FC8855;
+    color: #ffff;
+    border: none;
+    border-radius: 5%;
+    font-weight:5px;
+    padding: 0.6%;
+    /* font-size: 0px; */
+}
