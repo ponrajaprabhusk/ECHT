@@ -36,6 +36,15 @@
 <ng-template #dashboard>
     <nav class="navbar navbar-expand-lg" id="userNav">
       <a class="navbar-brand" href="#">Navbar</a>
+      
+      <div *ngIf="!isSidebarVisible">
+        <button class="w3-button" (click)="sidebarOpen()">☰</button>
+      </div>
+
+      <div *ngIf = "isSidebarVisible">
+        <button (click)="sidebarClose()" style="border: none;" class="w3-bar-item w3-blue w3-large"> &times;</button>
+      </div>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,19 +52,18 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <i class='bx bx-user' ></i>
+              
           </li>
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-          <i class='bx bx-user' ></i>
+          <i class="material-icons">account_circle</i>
         </form>
       </div>
     </nav>
 
     <div *ngIf="isSidebarVisible">
-        <div class="w3-sidebar w3-card w3-blue w3-bar-block" id="mySidebar">
-          <button (click)="sidebarClose()" class="w3-bar-item w3-blue w3-large"> &times;</button>
+        <div class="w3-sidebar w3-blue w3-bar-block w3-border-right" id="mySidebar">
           <a href="#" class="w3-bar-item w3-button">Search</a>
           <a href="#" class="w3-bar-item w3-button">Notification</a>
           <a href="#" class="w3-bar-item w3-button">My Feedback</a>
@@ -65,9 +73,6 @@
           <a href="#" class="w3-bar-item w3-button">Feed</a>
           <a href="#" class="w3-bar-item w3-button">Support Center</a>
         </div>
-    </div>
-    <div>
-      <button class="w3-button w3-xlarge" (click)="sidebarOpen()">☰</button>
     </div>
 
         <!-- Page Content -->
